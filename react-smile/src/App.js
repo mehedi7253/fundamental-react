@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import Component from './components/Hello'
 import Learning from './components/Learning'
 import Hook from './components/Hook'
@@ -8,9 +9,9 @@ import Check from './components/Check'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        {/* <p>test </p>
+        <p>test </p>
         <h1>Hello Mehedi</h1>
         <Component />
         <Learning />
@@ -19,14 +20,16 @@ function App() {
         <Component name='Apple' weight='120gm'/>
         <Component name='Orange' weight='500gm'/>
         <p>Hook</p>
-        <Hook /> */}
+        <Hook />
         <p>Check </p>
         <Check />
       </header>
 
-      {/* <div>
+      <div>
         <p>test </p>
       </div> */}
+
+      <h1>this is our home components</h1>
     </div>
   );
 }

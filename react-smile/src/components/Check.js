@@ -23,7 +23,8 @@ class Check extends Component{
         return(
             <div>
                 <input type="text" onChange={this.changeName} value={this.state.name}></input>
-                <h1>Hello { this.state.name }</h1>
+                <h1 class="text-danger">Hello { this.state.name }</h1>
+                <button class="btn btn-success btn-sm">test</button>
             </div>          
         );
     }
