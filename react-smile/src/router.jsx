@@ -1,21 +1,36 @@
 import React, { Component } from "react";
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import {createBrowserRouter, RouterProvider} from "react-router-dom"
+import Navbar from "./components/Navbar"
 import Home from './App'
 import About from './components/about'
 import Contact from './components/contact'
+import User from './components/User'
 
-export default class header extends Component {
-    render(){
-        return(
-            <Router>
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/contact">Contact</Link></li>
-                </ul>
-            </Router>
+
+function App(){
+    const router = createBrowserRouter([
+        {
+            path: "/",
+            element: <><Navbar/><Home/></>
+        },
+        {
+            path: "/about",
+            element:  <><Navbar/> <About/></>
+        },
+        {
+            path: "/contact",
+            element: <><Navbar/><Contact/></>
+        },
+        {
+            path: "/user/:username",
+            element: <><Navbar/><User/></>
+        }
+    ]);
+    return (
+        <div>
            
-
-        );
-    }
+            <RouterProvider router={router}/>
+        </div>
+    )
 }
+export default App;
